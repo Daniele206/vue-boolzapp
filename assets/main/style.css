@@ -400,7 +400,7 @@ input{
 }
 
 .dark-mode .text-color-input{
-  color: white;
+  color: white !important;
 }
 
 @media screen and (max-width: 992px){

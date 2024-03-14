@@ -77,13 +77,18 @@
           <div class="search-chat d-flex al-center">
             <div class="search d-flex">
               <div class="lente d-flex al-center"><i class="fa-solid fa-magnifying-glass"></i></div>
-              <input type="text" class="text-color-input" placeholder="Cerca o inizia una nuova chat">
+              <input
+              type="text"
+              class="text-color-input"
+              placeholder="Cerca o inizia una nuova chat"
+              v-model="searchUser"
+              >
             </div>
           </div>
 
           <div class="list-chat">
             <div
-            v-for="(user, i) in listChat"
+            v-for="(user, i) in userFilter"
             @click="counter = i"
             :class="{'user-selected' : counter === i}"
             class="hover chat-avatar d-flex just-betwen"

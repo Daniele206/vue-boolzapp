@@ -192,7 +192,7 @@ createApp({
       ],
       counter: 0,
       writeMessage: '',
-      
+      searchUser: '',
     };
   },
 
@@ -229,15 +229,19 @@ createApp({
     bootMessage(){
       this.listChat[this.counter].chat.push(
         {
-          text: 'BOT (L\'utente non é al momento online le risponderá appena leggerá il messaggio)',
+          text: 'BOT (L\'utente non é al momento online, le risponderá appena leggerá il messaggio)',
           date: this.getDate(),
           myMessage: false
         },
       )
-    }
+    },
   },
 
-  computed(){
+  computed:{
+
+    userFilter(){
+      return this.listChat.filter(user => user.name.toLowerCase().includes(this.searchUser.toLowerCase()))
+    },
 
   },
 
