@@ -191,7 +191,42 @@ createApp({
         },
       ],
       counter: 0,
+      writeMessage: '',
     };
-  }
+  },
+
+  methods:{
+    addMessage(message){
+      this.listChat[this.counter].chat.push(
+        {
+          text: message,
+          date: '14/03/2024 14.10',
+          myMessage: true
+        },
+      );
+
+      this.writeMessage = '';
+
+      setTimeout(this.bootMessage, 1000);
+    },
+
+    bootMessage(){
+      this.listChat[this.counter].chat.push(
+        {
+          text: 'BOT (L\'utente non é al momento online le risponderá appena leggerá il messaggio)',
+          date: '14/03/2024 14.10',
+          myMessage: false
+        },
+      )
+    }
+  },
+
+  computed(){
+
+  },
+
+  mounted(){
+
+  },
 
 }).mount('#app');

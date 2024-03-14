@@ -77,7 +77,7 @@
           <div class="search-chat d-flex al-center">
             <div class="search d-flex">
               <div class="lente d-flex al-center"><i class="fa-solid fa-magnifying-glass"></i></div>
-              <input type="text" placeholder="Cerca o inizia una nuova chat">
+              <input type="text" class="text-black" placeholder="Cerca o inizia una nuova chat">
             </div>
           </div>
 
@@ -257,7 +257,13 @@
           </div>
           <div class="scrivi d-flex al-center just-betwen">
             <i class="hover fa-regular fa-face-smile"></i>
-            <input type="text" placeholder="Scrivi un messaggio">
+            <input
+            type="text"
+            class="text-black"
+            placeholder="Scrivi un messaggio"
+            v-model="writeMessage"
+            @keyup.enter="addMessage(writeMessage)"
+            >
             <i class="hover fa-solid fa-microphone"></i>
           </div>
         </div>
