@@ -45,14 +45,14 @@
               <div class="name">
                 {{ user.name }}
               </div>
-              <div class="last-acces">
+              <div v-if="user.chat[0] !== ''" class="last-acces">
                 Ultimo messaggio {{ user.chat[user.chat.length - 1].date}}
               </div>
             </div>
           </div>
 
           <i id="dark-teme2" @click="darkMode = !darkMode" class="hover fa-solid fa-circle-half-stroke"></i>
-          
+
           <div class="user-menu avatar-menu d-flex">
             <i @click="darkMode = !darkMode" class="hover fa-solid fa-circle-half-stroke"></i>
             <i class="hover fa-solid fa-magnifying-glass"></i>
