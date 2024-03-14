@@ -212,7 +212,7 @@ createApp({
       const mi = date.getMinutes() < 10 ? '0'+date.getMinutes() : date.getMinutes();
       const s = date.getSeconds() < 10 ? '0'+date.getSeconds() : date.getSeconds();
 
-      return `${d}/${mo}/${y} - ${h}:${mi}:${s}`
+      return `${d}/${mo}/${y} ${h}:${mi}:${s}`
     },
 
     addMessage(message){
