@@ -93,11 +93,13 @@
 
           <div class="list-chat">
             <div
-            v-for="(user, i) in userFilter"
+            v-for="(user, i) in listChat"
             @click="counter = i"
             :class="{'user-selected' : counter === i}"
-            class="hover chat-avatar d-flex just-betwen"
             >
+            <div
+            v-if="userFilter.includes(user)"
+            class="d-flex chat-avatar just-betwen hover">
               <div class="info-chat-avatar d-flex al-center">
                 <img class="avatar" :src="user.img" alt="avatar_2">
                 <div class="info-avatar">
@@ -112,6 +114,7 @@
               <div class="last-acces text-end">
                 {{ user.chat[user.chat.length - 1].date}}
               </div>
+            </div>
             </div>
             <!-- <div class="chat-avatar d-flex just-betwen">
               <div class="info-chat-avatar d-flex al-center">
