@@ -79,12 +79,12 @@
           </div>
 
           <div class="list-chat">
-            <div class="chat-avatar d-flex just-betwen">
+            <div v-for="user in listChat" class="chat-avatar d-flex just-betwen">
               <div class="info-chat-avatar d-flex al-center">
-                <img class="avatar" src="./assets/img/avatar_1.jpg" alt="avatar_2">
+                <img class="avatar" :src="user.img" alt="avatar_2">
                 <div class="info-avatar">
                   <div class="name">
-                    Michele
+                    {{ user.name }}
                   </div>
                   <div class="last-message">
                     Lorem ipsum dolor sit amet
@@ -95,7 +95,7 @@
                 16:26
               </div>
             </div>
-            <div class="chat-avatar d-flex just-betwen">
+            <!-- <div class="chat-avatar d-flex just-betwen">
               <div class="info-chat-avatar d-flex al-center">
                 <img class="avatar" src="./assets/img/avatar_2.jpg" alt="avatar_2">
                 <div class="info-avatar">
@@ -206,7 +206,7 @@
               <div class="last-acces">
                 15:15
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
 
