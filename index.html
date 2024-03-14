@@ -77,7 +77,7 @@
           <div class="search-chat d-flex al-center">
             <div class="search d-flex">
               <div class="lente d-flex al-center"><i class="fa-solid fa-magnifying-glass"></i></div>
-              <input type="text" class="text-black" placeholder="Cerca o inizia una nuova chat">
+              <input type="text" class="text-color-input" placeholder="Cerca o inizia una nuova chat">
             </div>
           </div>
 
@@ -237,7 +237,7 @@
                       <span>Cancella messaggio</span>
                     </div>
                   </div>
-                  <div class="last-acces">16:13</div>
+                  <div class="last-acces">{{ message.date }}</div>
                 </div>
               </div>
               <!-- <div class="my-row d-flex avatar-message">
@@ -259,7 +259,7 @@
             <i class="hover fa-regular fa-face-smile"></i>
             <input
             type="text"
-            class="text-black"
+            class="text-color-input"
             placeholder="Scrivi un messaggio"
             v-model="writeMessage"
             @keyup.enter="addMessage(writeMessage)"

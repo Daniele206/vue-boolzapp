@@ -395,6 +395,14 @@ input{
   width: 40px;
 }
 
+.text-color-input{
+  color: black !important;
+}
+
+.dark-mode .text-color-input{
+  color: white;
+}
+
 @media screen and (max-width: 992px){
   .my-container{
     margin: 0;
