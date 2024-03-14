@@ -338,16 +338,8 @@ input{
   padding: 2px;
 }
 
-.fa-chevron-down:hover + .message-option{
-  display: flex;
-}
-
-.message-option:hover{
-  display: flex;
-}
-
 .message-option{
-  display: none;
+  display: flex;
   position: absolute;
   top: 35px;
   right: 15px;
@@ -401,6 +393,24 @@ input{
 
 .dark-mode .text-color-input{
   color: white !important;
+}
+
+.user-message-preview-dim{
+  max-height: 20px;
+  max-width: 170px;
+}
+
+.hover-option{
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+}
+
+.hover-option:hover{
+  background-color: rgb(214, 214, 214);
+}
+
+.dark-mode .hover-option:hover{
+  background-color: #3a3a3a;
 }
 
 @media screen and (max-width: 992px){

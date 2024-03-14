@@ -22,7 +22,9 @@
     :class="darkMode ? 'btn-outline-light' : 'btn-outline-dark'"
     class="btn position-absolute top-0 m-3"
     >Dark/White Mode</button>
-    <section class="my-container">
+    <section
+    @click="downOption === true ? downOption = false : downOption = downOption"
+    class="my-container">
       <div class="top d-flex">
         <div class="sinistra sinistra-top d-flex">
           <img class="avatar" src="./assets/img/avatar_io.jpg" alt="avatar_io">
@@ -44,7 +46,7 @@
                 {{ user.name }}
               </div>
               <div class="last-acces">
-                Ultimo accesso oggi alle 16:26
+                Ultimo messaggio {{ user.chat[user.chat.length - 1].date}}
               </div>
             </div>
           </div>
@@ -99,13 +101,13 @@
                   <div class="name">
                     {{ user.name }}
                   </div>
-                  <div class="last-message">
-                    Lorem ipsum dolor sit amet
+                  <div class="last-message overflow-hidden user-message-preview-dim">
+                    {{ user.chat[user.chat.length - 1].text}}
                   </div>
                 </div>
               </div>
-              <div class="last-acces">
-                16:26
+              <div class="last-acces text-end">
+                {{ user.chat[user.chat.length - 1].date}}
               </div>
             </div>
             <!-- <div class="chat-avatar d-flex just-betwen">
@@ -230,16 +232,23 @@
             :class="{'d-none' : counter !== i}"
             class="chat-message">
               <div
-              v-for="message in user.chat"
+              v-if="user.chat[0] !== ''"
+              v-for="(message, i) in user.chat"
               :class="message.myMessage === true ? 'my-message' : 'avatar-message'"
               class="my-row d-flex">
                 <div class="message d-flex">
-                  <p>{{ message.text }}</p>
+                  <p class="overflow-hidden">{{ message.text }}</p>
                   <div class="my-w-1">
-                      <i class="hover position-absolute end-0 me-3 fa-solid fa-chevron-down"></i>
-                    <div class="message-option al-center">
-                      <span>Info messaggio</span>
-                      <span>Cancella messaggio</span>
+                      <i
+                      class="hover position-absolute end-0 me-3 fa-solid fa-chevron-down"
+                      @click.stop="messageCounter = i, downOption = !downOption"
+                      ></i>
+                    <div v-show="downOption && messageCounter === i" class="message-option al-center">
+                      <span class="hover-option">Info messaggio</span>
+                      <span
+                      class="hover-option"
+                      @click.stop="deleteMessage(user, i)"
+                      >Cancella messaggio</span>
                     </div>
                   </div>
                   <div class="last-acces">{{ message.date }}</div>
