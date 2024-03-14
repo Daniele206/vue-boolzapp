@@ -17,11 +17,11 @@
 
   <!-- <main class="dark-mode"> -->
   <main :class="{'dark-mode' : darkMode}">
-    <button
+    <!-- <button
     @click="darkMode = !darkMode"
     :class="darkMode ? 'btn-outline-light' : 'btn-outline-dark'"
     class="btn position-absolute top-0 m-3"
-    >Dark/White Mode</button>
+    >Dark/White Mode</button> -->
     <section
     @click="downOption === true ? downOption = false : downOption = downOption"
     class="my-container">
@@ -51,7 +51,10 @@
             </div>
           </div>
 
+          <i id="dark-teme2" @click="darkMode = !darkMode" class="hover fa-solid fa-circle-half-stroke"></i>
+          
           <div class="user-menu avatar-menu d-flex">
+            <i @click="darkMode = !darkMode" class="hover fa-solid fa-circle-half-stroke"></i>
             <i class="hover fa-solid fa-magnifying-glass"></i>
             <i class="hover fa-solid fa-paperclip"></i>
             <i class="hover fa-solid fa-ellipsis-vertical"></i>

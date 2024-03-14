@@ -86,7 +86,7 @@ main{
 .user-menu{
   font-size: 1.6rem;
   padding-right: 25px;
-  width: 120px;
+  width: 135px;
   justify-content: flex-end;
 }
 
@@ -424,6 +424,17 @@ input{
   color: white;
 }
 
+#dark-teme2{
+  display: none;
+  font-size: 1.5rem;
+  padding-right: 15px;
+  color: #B1B1B1;
+}
+
+.dark-mode #dark-teme2{
+  color: white;
+}
+
 @media screen and (max-width: 992px){
   .my-container{
     margin: 0;
@@ -440,15 +451,15 @@ input{
   }
 
   .notifiche{
-    display: none;
+    display: none !important;
   }
 
   .search-chat{
-    display: none;
+    display: none !important;
   }
 
   .my-menu{
-    display: none;
+    display: none !important;
   }
 
   .list-chat{
@@ -456,7 +467,7 @@ input{
   }
 
   .list-chat .chat-avatar .info-avatar,.list-chat .chat-avatar .last-acces{
-    display: none;
+    display: none !important;
   }
 
   .destra{
@@ -466,7 +477,7 @@ input{
 
 @media screen and (max-width: 542px){
   .sinistra{
-    display: none;
+    display: none !important;
   }
 
   .destra{
@@ -474,7 +485,7 @@ input{
   }
 
   .avatar-menu{
-    display: none;
+    display: none !important;
   }
 
   .destra .scrivi{
@@ -486,6 +497,10 @@ input{
   }
 
   .destra .scrivi i{
-    display: none;
+    display: none !important;
+  }
+
+  #dark-teme2{
+    display: block;
   }
 }
