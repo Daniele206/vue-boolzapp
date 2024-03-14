@@ -383,8 +383,20 @@ input{
   background-color: #202020;
 }
 
+.user-selected{
+  background-color: #F3EEEA;
+}
+
+.dark-mode .user-selected{
+  background-color: #202020;
+}
+
+.my-w-1{
+  width: 40px;
+}
+
 @media screen and (max-width: 992px){
-  .container{
+  .my-container{
     margin: 0;
     width: 100%;
     height: 100%;

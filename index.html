@@ -34,11 +34,14 @@
         </div>
 
         <div class="destra destra-top d-flex">
-          <div class="chat-details d-flex al-center">
-            <img class="avatar" src="./assets/img/avatar_1.jpg" alt="avatar_1">
+          <div
+          v-for="(user, i) in listChat"
+          :class="{'d-none' : counter !== i}"
+          class="chat-details d-flex al-center">
+            <img class="avatar" :src="user.img" alt="avatar_1">
             <div class="info-avatar">
               <div class="name">
-                Michele
+                {{ user.name }}
               </div>
               <div class="last-acces">
                 Ultimo accesso oggi alle 16:26
@@ -79,7 +82,12 @@
           </div>
 
           <div class="list-chat">
-            <div v-for="user in listChat" class="chat-avatar d-flex just-betwen">
+            <div
+            v-for="(user, i) in listChat"
+            @click="counter = i"
+            :class="{'user-selected' : counter === i}"
+            class="hover chat-avatar d-flex just-betwen"
+            >
               <div class="info-chat-avatar d-flex al-center">
                 <img class="avatar" :src="user.img" alt="avatar_2">
                 <div class="info-avatar">
@@ -212,12 +220,18 @@
 
         <div class="destra">
           <div class="chat d-flex">
-            <div class="chat-message">
-              <div class="my-row d-flex my-message">
+            <div
+            v-for="(user, i) in listChat"
+            :class="{'d-none' : counter !== i}"
+            class="chat-message">
+              <div
+              v-for="message in user.chat"
+              :class="message.myMessage === true ? 'my-message' : 'avatar-message'"
+              class="my-row d-flex">
                 <div class="message d-flex">
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem expedita modi veniam molestias dolorem aperiam magnam nobis porro! Quam impedit facere sequi consequuntur fuga reprehenderit unde quod fugit cupiditate consequatur.</p>
-                  <div>
-                    <i class="hover fa-solid fa-chevron-down"></i>
+                  <p>{{ message.text }}</p>
+                  <div class="my-w-1">
+                      <i class="hover position-absolute end-0 me-3 fa-solid fa-chevron-down"></i>
                     <div class="message-option al-center">
                       <span>Info messaggio</span>
                       <span>Cancella messaggio</span>
@@ -226,7 +240,7 @@
                   <div class="last-acces">16:13</div>
                 </div>
               </div>
-              <div class="my-row d-flex avatar-message">
+              <!-- <div class="my-row d-flex avatar-message">
                 <div class="message d-flex">
                   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem expedita modi veniam molestias dolorem aperiam magnam nobis porro! Quam impedit facere sequi consequuntur fuga reprehenderit unde quod fugit cupiditate consequatur.</p>
                   <div>
@@ -238,7 +252,7 @@
                   </div>
                   <div class="last-acces">16:15</div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="scrivi d-flex al-center just-betwen">
