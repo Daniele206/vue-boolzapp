@@ -467,6 +467,15 @@ input{
   border: 1px solid #2C2C2C;
 }
 
+.my-bg-login{
+  background-color: white;
+}
+
+.dark-mode .my-bg-login{
+  background-color: #202020;
+  color: white;
+}
+
 @media screen and (max-width: 992px){
   .my-container{
     margin: 0;
