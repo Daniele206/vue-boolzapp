@@ -50,5 +50,6 @@ vue-boolzap
 14. Fixare la tendina delle impostaioni dei messaggi per far si che se passiamo da un messaggio all'altro ci si chiude la precedente e ci si apre quella attuale solo con un click.
 15. Fixare la freccietta della tendina per far si che appaia con l'hover e scompaia qunado usciamo dal messaggio, ma al click deve rimanere visibile anche se spostimao il mouse da sopra al messaggio (fino a quando chiudiamo la tendina o apriamo una tendina diversa).
 16. Utlilizzare la libreria di **luxon** per inserie data e orari dei nuovi messaggi.
+17. Utilizzare (type='module') nel collegamendo script del file JS per utilizzare un secondo JS come database delle chat.
 
 
