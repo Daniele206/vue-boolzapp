@@ -53,6 +53,18 @@ main{
   margin: 0 auto;
 }
 
+.my-container2{
+  width: 90%;
+  max-width: 1310px;
+  height: 95vh;
+  margin: 0 auto;
+  background-color: #EAEAEA;
+}
+
+.dark-mode .my-container2{
+  background-color: #2C2C2C;
+}
+
 .top{
   height: 10%;
   width: 100%;
@@ -86,7 +98,8 @@ main{
 .user-menu{
   font-size: 1.6rem;
   padding-right: 25px;
-  width: 140px;
+  width: 180px;
+  align-items: center;
   justify-content: flex-end;
 }
 
@@ -107,6 +120,10 @@ main{
 .destra-top{
   justify-content: space-between;
   align-items: center;
+}
+
+.chat-details{
+  width: 400px;
 }
 
 .top .info-avatar{
@@ -424,14 +441,14 @@ input{
   color: white;
 }
 
-#dark-teme2{
+.dark-teme2{
   display: none;
   font-size: 1.5rem;
   padding-right: 15px;
   color: #B1B1B1;
 }
 
-.dark-mode #dark-teme2{
+.dark-mode .dark-teme2{
   color: white;
 }
 
@@ -441,6 +458,13 @@ input{
 
 .message:hover .option-arrow{
   display: block;
+}
+
+.login-avatar{
+  width: 300px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid #2C2C2C;
 }
 
 @media screen and (max-width: 992px){
@@ -508,7 +532,7 @@ input{
     display: none !important;
   }
 
-  #dark-teme2{
-    display: block;
+  .dark-teme2{
+    display: block !important;
   }
 }

@@ -8,8 +8,10 @@ createApp({
 
   data(){
     return{
+      nomeUtente: prompt('Inserire Nome Utente'),
       listChat,
       darkMode: false,
+      login: false,
       counter: 0,
       writeMessage: '',
       searchUser: '',

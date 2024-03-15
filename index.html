@@ -23,6 +23,7 @@
     class="btn position-absolute top-0 m-3"
     >Dark/White Mode</button> -->
     <section
+    v-if="login"
     @click="downOption === true ? downOption = false : downOption = downOption"
     class="my-container">
       <div class="top d-flex">
@@ -34,26 +35,30 @@
             <i class="hover fa-solid fa-ellipsis-vertical"></i>
           </div>
         </div>
-
+        
         <div class="destra destra-top d-flex">
           <div
           v-for="(user, i) in listChat"
           :class="{'d-none' : counter !== i}"
           class="chat-details d-flex al-center">
-            <img class="avatar" :src="user.img" alt="avatar_1">
-            <div class="info-avatar">
-              <div class="name">
-                {{ user.name }}
-              </div>
-              <div v-if="user.chat[0] !== ''" class="last-acces">
-                Ultimo messaggio {{ user.chat[user.chat.length - 1].date}}
-              </div>
+          <img class="avatar" :src="user.img" alt="avatar_1">
+          <div class="info-avatar">
+            <div class="name">
+              {{ user.name }}
+            </div>
+            <div v-if="user.chat[0] !== ''" class="last-acces">
+              Ultimo messaggio {{ user.chat[user.chat.length - 1].date}}
             </div>
           </div>
-
-          <i id="dark-teme2" @click="darkMode = !darkMode" class="hover fa-solid fa-circle-half-stroke"></i>
-
+          </div>
+          
+          <div class="d-flex">
+            <i @click="login = !login" class="dark-teme2 hover fa-solid fa-right-from-bracket"></i>
+            <i @click="darkMode = !darkMode" class="dark-teme2 hover fa-solid fa-circle-half-stroke"></i>
+          </div>
+        
           <div class="user-menu avatar-menu d-flex">
+            <i @click="login = !login" class="hover fa-solid fa-right-from-bracket"></i>
             <i @click="darkMode = !darkMode" class="hover fa-solid fa-circle-half-stroke"></i>
             <i class="hover fa-solid fa-magnifying-glass"></i>
             <i class="hover fa-solid fa-paperclip"></i>
@@ -292,6 +297,15 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section v-else
+    class="my-container2 d-flex flex-column justify-content-center align-items-center ">
+    <img class="login-avatar" src="./assets/img/avatar_io.jpg" alt="">
+    <div class="mt-4 bg-white w-25 h-25 rounded-5 d-flex justify-content-center align-items-center flex-column">
+      <h2 class="fw-bold pb-4">Ciao {{nomeUtente}}</h2>
+      <button @click="login = !login" class="btn btn-outline-success fw-bold fs-4">Effettua l'accesso</button>
+    </div>
     </section>
   </main>
 
