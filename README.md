@@ -49,5 +49,6 @@ vue-boolzap
 13. Rendere funzionate il tasto darkMode (la sfera mezza piena e mezza vuota).
 14. Fixare la tendina delle impostaioni dei messaggi per far si che se passiamo da un messaggio all'altro ci si chiude la precedente e ci si apre quella attuale solo con un click.
 15. Fixare la freccietta della tendina per far si che appaia con l'hover e scompaia qunado usciamo dal messaggio, ma al click deve rimanere visibile anche se spostimao il mouse da sopra al messaggio (fino a quando chiudiamo la tendina o apriamo una tendina diversa).
+16. Utlilizzare la libreria di **luxon** per inserie data e orari dei nuovi messaggi.
 
 

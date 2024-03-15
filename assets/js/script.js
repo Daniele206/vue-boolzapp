@@ -1,5 +1,7 @@
 const {createApp} = Vue;
 
+const {DateTime} = luxon;
+
 createApp({
 
   data(){
@@ -200,19 +202,11 @@ createApp({
   },
 
   methods:{
-
     getDate(){
-      const date = new Date();
-
-      const y = date.getFullYear();
-      const mo = date.getMonth() < 10 ? '0'+date.getMonth() : date.getMonth();
-      const d = date.getDay() < 10 ? '0'+date.getDay() : date.getDay();
-
-      const h = date.getHours() < 10 ? '0'+date.getHours() : date.getHours();
-      const mi = date.getMinutes() < 10 ? '0'+date.getMinutes() : date.getMinutes();
-      const s = date.getSeconds() < 10 ? '0'+date.getSeconds() : date.getSeconds();
-
-      return `${d}/${mo}/${y} ${h}:${mi}:${s}`
+      const fulldata = DateTime.now()
+                      .setLocale('it')
+                      .toFormat('dd/MM/yyyy hh:mm:ss')
+      return fulldata
     },
 
     addMessage(message){
