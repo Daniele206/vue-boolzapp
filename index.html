@@ -246,7 +246,8 @@
                   <p class="overflow-hidden">{{ message.text }}</p>
                   <div class="my-w-1">
                       <i
-                      class="hover position-absolute end-0 me-3 fa-solid fa-chevron-down"
+                      class="hover option-arrow position-absolute end-0 me-3 fa-solid fa-chevron-down"
+                      :class="downOption && messageCounter === i ? 'd-block' : ''"
                       @click.stop="downOptionF(i)"
                       ></i>
                     <div v-show="downOption && messageCounter === i" class="message-option al-center">
