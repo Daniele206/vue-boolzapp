@@ -2,7 +2,7 @@ const {DateTime} = luxon;
 
 const {createApp} = Vue;
 
-import { listChat } from './listChatjs.js';
+import { listChat } from './listChat.js';
 
 createApp({
 
