@@ -397,7 +397,7 @@ input{
 
 .user-message-preview-dim{
   max-height: 20px;
-  max-width: 170px;
+  width: 170px;
 }
 
 .hover-option{
@@ -433,6 +433,14 @@ input{
 
 .dark-mode #dark-teme2{
   color: white;
+}
+
+.option-arrow{
+  display: none;
+}
+
+.message:hover .option-arrow{
+  display: block;
 }
 
 @media screen and (max-width: 992px){

@@ -247,7 +247,7 @@
                   <div class="my-w-1">
                       <i
                       class="hover position-absolute end-0 me-3 fa-solid fa-chevron-down"
-                      @click.stop="messageCounter = i, downOption = !downOption"
+                      @click.stop="downOptionF(i)"
                       ></i>
                     <div v-show="downOption && messageCounter === i" class="message-option al-center">
                       <span class="hover-option">Info messaggio</span>

@@ -193,8 +193,8 @@ createApp({
       counter: 0,
       writeMessage: '',
       searchUser: '',
-      downOption: false,
-      messageCounter: 0,
+      downOption: true,
+      messageCounter: -1,
       thisChat: true,
     };
   },
@@ -264,6 +264,15 @@ createApp({
       console.log(user);
 
       this.downOption === true ? this.downOption = false : this.downOption = this.downOption
+    },
+
+    downOptionF(i){
+      if(this.messageCounter === i){
+        this.downOption = !this.downOption
+      }else{
+        this.downOption = true
+      }
+      this.messageCounter = i;
     }
   },
 
