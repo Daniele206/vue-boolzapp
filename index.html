@@ -46,8 +46,8 @@
             <div class="name">
               {{ user.name }}
             </div>
-            <div v-if="user.chat[0] !== ''" class="last-acces">
-              Ultimo messaggio {{ user.chat[user.chat.length - 1].date}}
+            <div v-if="user.chat.length > 0" class="last-acces">
+              Ultimo messaggio {{ getUserInfo(user, 'date') }}
             </div>
           </div>
           </div>
@@ -91,7 +91,7 @@
               type="text"
               class="text-color-input"
               placeholder="Cerca o inizia una nuova chat"
-              v-model="searchUser"
+              v-model.trim="searchUser"
               >
             </div>
           </div>
@@ -112,12 +112,12 @@
                     {{ user.name }}
                   </div>
                   <div class="last-message overflow-hidden user-message-preview-dim">
-                    {{ user.chat[user.chat.length - 1].text}}
+                    {{ getUserInfo(user, 'text') }}
                   </div>
                 </div>
               </div>
               <div class="last-acces text-end">
-                {{ user.chat[user.chat.length - 1].date}}
+                {{ getUserInfo(user, 'date') }}
               </div>
             </div>
             </div>
@@ -290,7 +290,7 @@
             type="text"
             class="text-color-input"
             placeholder="Scrivi un messaggio"
-            v-model="writeMessage"
+            v-model.trim="writeMessage"
             @keyup.enter="addMessage(writeMessage)"
             >
             <i class="hover fa-solid fa-microphone"></i>

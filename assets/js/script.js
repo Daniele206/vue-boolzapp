@@ -30,8 +30,6 @@ createApp({
     },
 
     addMessage(message){
-      if(this.listChat[this.counter].chat[0] === ''){
-        this.listChat[this.counter].chat.splice(0, 1);
         this.listChat[this.counter].chat.push(
           {
             text: message,
@@ -39,17 +37,6 @@ createApp({
             myMessage: true
           },
         );
-      }else{
-        this.listChat[this.counter].chat.push(
-          {
-            text: message,
-            date: this.getDate(),
-            myMessage: true
-          },
-        );
-      }
-
-      
 
       this.writeMessage = '';
 
@@ -67,13 +54,7 @@ createApp({
     },
 
     deleteMessage(user, i){
-      if(user.chat.length > 1){
-        user.chat.splice(i, 1);
-      }else{
-        user.chat.splice(i, 1);
-        user.chat.push('')
-      }
-
+      user.chat.splice(i, 1);
 
       console.log(user);
 
@@ -87,6 +68,12 @@ createApp({
         this.downOption = true
       }
       this.messageCounter = i;
+    },
+
+    getUserInfo(user, info){
+      if(user.chat.length > 0){
+        return user.chat[user.chat.length - 1][info]
+      }
     }
   },
 
