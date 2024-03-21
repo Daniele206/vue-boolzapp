@@ -243,7 +243,7 @@
             :class="{'d-none' : counter !== i}"
             class="chat-message">
               <div
-              v-if="user.chat[0] !== ''"
+              v-if="user.chat.length > 0"
               v-for="(message, i) in user.chat"
               :class="message.myMessage === true ? 'my-message' : 'avatar-message'"
               class="my-row d-flex">
